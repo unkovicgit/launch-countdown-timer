@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --primary: hsl(345, 95%, 68%);
+  --secondary: hsl(237, 18%, 59%);
+  --bg-color-1: hsl(235, 16%, 14%);
+  --bg-color-2: hsl(234, 17%, 12%);
+}
+
+body {
+  font-family: "Red Hat Text", sans-serif;
+  font-weight: 700;
+  position: relative;
+}
+
+main {
+  min-height: 100vh;
+  padding: 9rem 1.5rem 3rem 1.5rem;
+  font-size: 0.875rem;
+  background: url(../images/pattern-hills.svg) bottom right 20% no-repeat,
+    url(../images/bg-stars.svg), var(--bg-color-2);
+  position: relative;
+}
+
+@media screen and (min-width: 750px) {
+  main {
+    font-size: 1.125rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  main {
+    background-size: contain;
+  }
+}
+
+.container {
+  max-width: 325px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 750px) {
+  .container {
+    max-width: 700px;
+  }
+}
+
+.header {
+  margin-bottom: 7rem;
+}
+
+.header__title {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  color: var(--white);
+}
+
+.timer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timer__number {
+  color: var(--primary);
+  font-size: 1.625rem;
+  width: 4.25rem;
+  height: 4.25rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    to bottom,
+    hsl(236, 21%, 22%) 0%,
+    hsl(236, 21%, 22%) 50%,
+    hsl(236, 21%, 26%) 50%,
+    hsl(236, 21%, 26%) 100%
+  );
+  margin-bottom: 0.875rem;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 750px) {
+  .timer__number {
+    font-size: 3.5rem;
+    width: 8.5rem;
+    height: 8.5rem;
+  }
+}
+
+.timer__number::after,
+.timer__number::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--bg-color-2);
+  top: 50%;
+}
+
+.timer__number::after {
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.timer__number::before {
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.timer__desc {
+  text-align: center;
+  color: var(--secondary);
+  font-size: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@media screen and (min-width: 750px) {
+  .timer__desc {
+    letter-spacing: 4px;
+    font-size: 0.75rem;
+  }
+}
+
+.footer {
+  position: absolute;
+  left: 1.5rem;
+  right: 1.5rem;
+  bottom: 3rem;
+  z-index: 5;
+}
+
+.footer__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__link:hover path {
+  fill: var(--primary);
+}
+
+.footer__item:nth-of-type(2) {
+  margin: 0 2rem;
+}
